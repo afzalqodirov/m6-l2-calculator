@@ -42,8 +42,8 @@
     </div>
     <script>
         document.getElementById('inputplace').addEventListener("keypress", function (event) {
-            if (event.key == 'Enter'){document.getElementById('inputplace').value = eval(document.getElementById('inputplace').value)}
-            else if ('+-*/'.includes(event.key)){event.preventDefault();calc(event.key)}
+            if (event.key == 'Enter'){event.preventDefault();calc('=')}
+            else if ('+-*/.'.includes(event.key)){event.preventDefault();calc(event.key)}
             else if (event.key <= '9' && event.key >= '0'){}
             else if (event.key == 'c' || event.key == 'C'){event.preventDefault(); calc('C')}
             else {event.preventDefault();}})
@@ -57,7 +57,7 @@
             else if (txt == 'C'){document.getElementById('inputplace').value = '';}
             else {
                 try{document.getElementById('inputplace').value = eval(tmp);}
-                catch {document.getElementById('inputplace').value = 'Error'; setTimeout(() => document.getElementById('inputplace').value = '', 1000);}}}
+                catch {document.getElementById('inputplace').value = 'Error'; setTimeout(() => document.getElementById('inputplace').value = '', 1500);}}}
     </script>
 </body>
 </html>
